@@ -67,11 +67,15 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: deslizar-voltando 0.4s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: deslizar-indo 0.4s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--hihglight-color);
 }
 
 #switch span {
@@ -173,5 +177,24 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/*animation*/
+@keyframes deslizar-indo {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes deslizar-voltando {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
